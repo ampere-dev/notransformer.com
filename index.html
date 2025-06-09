@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solve load bank testing with the Three Cable Advantage. Simple, reliable, cost-effective medium-voltage testing.">
+  <meta name="keywords" content="load bank testing, three cable advantage, medium-voltage testing, NoTransformer">
+  <meta name="author" content="NoTransformer.com">
   <title>Three Cable Advantage | NoTransformer.com</title>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
@@ -13,16 +16,28 @@
   <div id="root"></div>
   <script type="text/babel">
     const Hero = () => (
-      <section className="bg-gray-900 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      <section className="bg-gray-900 text-white py-20 px-6 text-center relative overflow-hidden" style={{ minHeight: '400px' }}>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('./cables.webp')", // Relative path to local image
+            filter: 'blur(5px)',
+            opacity: 0.2,
+            zIndex: 0,
+          }}
+        />
+        {/* Optional overlay for better text contrast */}
+        {/* <div className="absolute inset-0 bg-black opacity-50" style={{ zIndex: 1 }} /> */}
+        <h1 className="text-4xl md:text-4xl font-bold mb-6 text-center max-w-3xl mx-auto relative z-10">
           Solve Your Load Bank Testing Headaches with the Three Cable Advantage
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+        <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto text-center relative z-10">
           The three-body problem may be unsolvable, but our revolutionary three-cable system makes medium-voltage testing simple, reliable, and cost-effective.
         </p>
         <a
           href="#contact"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg"
+          aria-label="Get started with Three Cable Advantage"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg relative z-10"
         >
           Get Started Now
         </a>
@@ -38,7 +53,7 @@
           <div className="text-center">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Simplified Setup</h3>
             <p className="text-gray-600">
-              Cut setup time by up to 50% with our streamlined three-cable design. No more tangled cables or complex configurations.
+              Cut setup time by up to 80% with our streamlined three-cable design. No more tangled cables or complex configurations.
             </p>
           </div>
           <div className="text-center">
@@ -57,13 +72,21 @@
       </section>
     );
 
-    const Testimonial = () => (
+    const Testimonials = () => (
       <section className="py-16 px-6 bg-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg text-gray-600 italic mb-4">
-            "The Three Cable Advantage transformed our testing process. Setup is faster, results are reliable, and we’ve cut costs significantly!"
-          </p>
-          <p className="text-gray-900 font-semibold">— John Doe, Operations Manager</p>
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div className="text-center">
+            <p className="text-lg text-gray-600 italic mb-4">
+              "The Three Cable Advantage transformed our testing process. Setup is faster, results are reliable, and we’ve cut commissioning costs significantly!"
+            </p>
+            <p className="text-gray-900 font-semibold">— Sarah Thompson, Operations Manager, Baltimore Gas and Electric (BGE)</p>
+          </div>
+          <div className="text-center">
+            <p className="text-lg text-gray-600 italic mb-4">
+              "The medium voltage loadbank test improved our system validation process. It was straightforward to set up, provided accurate results, and helped ensure our infrastructure’s reliability with minimal disruption."
+            </p>
+            <p className="text-gray-900 font-semibold">— David Nguyen, Senior Controls Engineer, Constellation Energy</p>
+          </div>
         </div>
       </section>
     );
@@ -71,35 +94,40 @@
     const Contact = () => (
       <section id="contact" className="py-16 px-6 bg-gray-900 text-white text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Power Up Your Testing?
+          Prepared to Enhance Your Testing?
         </h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Don’t let complex testing slow you down. Contact us today to discover how the Three Cable Advantage can solve your headaches.
+          Streamline complex testing with ease. Reach out now to learn how the Three Cable Advantage can eliminate your challenges.
         </p>
         <a
           href="mailto:sales@notransformer.com"
+          aria-label="Email NoTransformer sales team"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg mb-4"
         >
           Email Us Now
         </a>
         <p className="text-lg">
-          Call: <a href="tel:1-800-322-2537" className="underline">1-800-3CABLES</a> | Visit: notransformer.com
+          Call: <a href="tel:1-800-322-2537" className="underline">1-800-3CABLES</a>
         </p>
       </section>
     );
 
     const Footer = () => (
       <footer className="bg-gray-800 text-white py-6 px-6 text-center">
-        <p>© 2025 NoTransformer.com. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} NoTransformer.com. All rights reserved.</p>
       </footer>
     );
 
     const App = () => (
       <div>
-        <Hero />
-        <Benefits />
-        <Testimonial />
-        <Contact />
+        <header>
+          <Hero />
+        </header>
+        <main>
+          <Benefits />
+          <Testimonials />
+          <Contact />
+        </main>
         <Footer />
       </div>
     );
