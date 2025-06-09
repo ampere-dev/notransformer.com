@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Cable Advantage | NoTransformer.com</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const Hero = () => (
+      <section className="bg-gray-900 text-white py-20 px-6 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          Solve Your Load Bank Testing Headaches with the Three Cable Advantage
+        </h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          The three-body problem may be unsolvable, but our revolutionary three-cable system makes medium-voltage testing simple, reliable, and cost-effective.
+        </p>
+        <a
+          href="#contact"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg"
+        >
+          Get Started Now
+        </a>
+      </section>
+    );
+
+    const Benefits = () => (
+      <section className="py-16 px-6 bg-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+          Why Choose the Three Cable Advantage?
+        </h2>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Simplified Setup</h3>
+            <p className="text-gray-600">
+              Cut setup time by up to 50% with our streamlined three-cable design. No more tangled cables or complex configurations.
+            </p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Unmatched Reliability</h3>
+            <p className="text-gray-600">
+              Engineered for medium-voltage load banks, our system ensures consistent power delivery and minimizes connection failures.
+            </p>
+          </div>
+          <div className="text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Cost-Effective Performance</h3>
+            <p className="text-gray-600">
+              Save on labor and downtime with a solution that optimizes your testing process without compromising quality.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+
+    const Testimonial = () => (
+      <section className="py-16 px-6 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg text-gray-600 italic mb-4">
+            "The Three Cable Advantage transformed our testing process. Setup is faster, results are reliable, and we’ve cut costs significantly!"
+          </p>
+          <p className="text-gray-900 font-semibold">— John Doe, Operations Manager</p>
+        </div>
+      </section>
+    );
+
+    const Contact = () => (
+      <section id="contact" className="py-16 px-6 bg-gray-900 text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Power Up Your Testing?
+        </h2>
+        <p className="text-xl mb-8 max-w-2xl mx-auto">
+          Don’t let complex testing slow you down. Contact us today to discover how the Three Cable Advantage can solve your headaches.
+        </p>
+        <a
+          href="mailto:sales@notransformer.com"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg mb-4"
+        >
+          Email Us Now
+        </a>
+        <p className="text-lg">
+          Call: <a href="tel:1-800-322-2537" className="underline">1-800-3CABLES</a> | Visit: notransformer.com
+        </p>
+      </section>
+    );
+
+    const Footer = () => (
+      <footer className="bg-gray-800 text-white py-6 px-6 text-center">
+        <p>© 2025 NoTransformer.com. All rights reserved.</p>
+      </footer>
+    );
+
+    const App = () => (
+      <div>
+        <Hero />
+        <Benefits />
+        <Testimonial />
+        <Contact />
+        <Footer />
+      </div>
+    );
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
